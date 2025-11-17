@@ -27,9 +27,14 @@ Raspberry Pi Imager is the official tool used to download and flash Raspberry Pi
 2. Select:
    - **OS** → Raspberry Pi OS Lite (64-bit)
    - **Storage** → Your microSD card
-3. Click the **gear icon** (advanced options) to configure headless boot.
+3. Click **Next**.
+4. When the prompt appears asking:
+   **“Would you like to apply OS customisation settings?”**
+   click **EDIT SETTINGS** to open the advanced configuration menu.
 
-![Screenshot - Raspberry Pi Imager OS Selection and Storage Selection](../images/flashing_sdcard.png)
+<img src="../images/flashing_sdcard.png" alt="Raspberry Pi Imager OS Selection and Storage Selection" width="600"/>
+
+<img src="../images/imager_edit_settings_prompt.png" alt="Raspberry Pi Imager apply OS customization settings prompt" width="600"/>
 
 ---
 
@@ -76,23 +81,35 @@ On the "Services" tab, select:
 - **Enable SSH**
 - Choose password or public key authentication
 
-![Screenshot - Raspberry Pi Imager Advanced Options Configuration for SSH, Wi-Fi, and Hostname](../images/imager_advanced_options.png)
+<img src="../images/imager_advanced_options.png" alt="Raspberry Pi Imager Advanced Options Configuration for SSH, Wi-Fi, and Hostname" width="500"/>
 
-After saving settings, click **Write** and wait for the flashing to finish.
+After setting the hostname, user account, Wi-Fi, regional settings, and SSH, click **SAVE**.
+
+You’ll be prompted to apply these customisation settings → choose **YES**.
+
+Finally, confirm the warning that **all existing data on the microSD card will be erased**, then wait for the flashing process to complete.
+
+Once the flashing and verification process is complete, you will see a confirmation message:
+
+<img src="../images/imager_write_success.png" alt="Raspberry Pi Imager Write Successful Confirmation" width="600"/>
+
+You can now safely remove the microSD card from the reader.
 
 ---
 
 ## First Boot Overview
 
-Insert the microSD card into the Raspberry Pi Zero 2 W and power it on.
+Insert the microSD card into the Raspberry Pi Zero 2 W and connect the **PWR IN** micro-USB port to your power supply.  
+
+The Pi should power on immediately.
 
 ### Expected LED Indicators
 
-- A **steady green LED** → system is booting successfully  
-- **Flashing activity** → system is expanding filesystem and starting services  
-- No LED at all → check power supply or SD card seating
+- **Steady green LED** → System is booting successfully  
+- **Flashing activity** → System is expanding filesystem and starting services  
+- No LED at all → Check power supply or SD card seating
 
-![Screenshot - Raspberry Pi Zero 2 W LEDs Active During First Boot](../images/first_boot_leds.png)
+<img src="../images/first_boot_leds.png" alt="Raspberry Pi Zero 2 W LEDs Active During First Boot" width="600"/>
 
 ---
 
@@ -103,6 +120,8 @@ Once the Pi connects to Wi-Fi, your Mac can SSH into it using the hostname you c
 ```bash
 ssh luisgrm@pi-zero2w.local
 ```
+
+> ⚠️ Make sure your Mac and the Raspberry Pi are on the same Wi-Fi network.
 
 If prompted to trust the fingerprint, type **yes**.
 

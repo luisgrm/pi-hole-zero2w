@@ -1,6 +1,6 @@
-# Raspberry Pi Zero 2 W – Pi-hole Network-Wide Ad Blocker
+# Pi-hole Deployment on Raspberry Pi Zero 2 W
 <!-- Markdown supports embedding raw HTML. This comment is HTML. The size of the initial image is controlled with HTML -->
-<!-- ![Screenshot - Raspberry Pi & Pi-hole logos](/images/raspberryPi-piHole.png) -->
+
 <img src="images/rpi-pihole-logos.png" alt="Logos" width="500"/>
 
 ## Overview
@@ -139,7 +139,11 @@ All DNS requests from devices flow to Pi-hole, which forwards safe queries upstr
 
 Once set up, Pi-hole’s web dashboard will be available at:
 
-http://pi.hole/admin
+http://pi.hole:80/admin
+
+or
+
+http://[RPizero-Static-IP]:80/admin
 
 ---
 

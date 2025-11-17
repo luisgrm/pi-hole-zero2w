@@ -33,7 +33,7 @@ curl -sSL https://install.pi-hole.net | bash
 
 This launches the interactive installer.
 
-![Screenshot - Terminal showing Pi-hole curl installation command](../images/pihole_curl_install.png)
+<img src="../images/pihole_curl_install.png" alt="Terminal Showing Pi-hole curl Installation Command" width="600"/>
 
 ---
 
@@ -64,22 +64,22 @@ Choose:
 This enables full visibility of DNS activity in the Pi-hole dashboard. You can adjust this level later at any time.
 
 ### 6. Installation Completes  
-Pi-hole will install the DNS server, web interface, and FTL engine.
+After all components are installed (DNS service, FTL engine, web interface), Pi-hole shows a final summary screen with your DNS IP addresses and admin panel URLs.
 
-![Screenshot - Pi-hole installer progress showing DNS and FTL setup](../images/pihole_installer_progress.png)
+![Screenshot - Pi-hole Installation Summary Screen Showing Final DNS and Admin Interface information](../images/pihole_installation_complete.png)
 
 ---
 
 ## Setting the Admin Password
 
-The installer no longer provides or displays a default admin password.
+Although the installer displays a default admin password, it is best practice to replace it with a secure one of your own because this controls access to the web admin page.
 
-- Set one manually by running:
+- Set a custom password using:
 ```bash
 sudo pihole setpassword
 ```
 
-> ⚠️ Use a secure password. This controls access to the web admin page.
+> ⚠️ For security reasons, always use a password you control instead of relying on automatically generated ones.
 
 ![Screenshot - Terminal setting Pi-hole admin password](../images/pihole_setpassword.png)
 
@@ -90,26 +90,28 @@ sudo pihole setpassword
 You can now reach the dashboard at:
 
 ```plaintext
-http://192.168.1.50/admin
+http://pi.hole:80/admin
 
-or 
+or
 
-http://pi.hole/admin
+http://192.168.1.98:80/admin
 ```
 
-![Screenshot - Pi-hole dashboard homepage showing query stats](../images/pihole_overview.png)
+![Screenshot - Pi-hole Dashboard Homepage](../images/pihole_overview.png)
 
 ---
 
 ## Assigning Pi-hole as the Network DNS (Router Settings)
 
-To enable Pi-hole for your whole apartment network:
+To enable Pi-hole for your whole apartment network **and allow it to actually perform DNS filtering**, you must configure your router to use the Raspberry Pi as the primary DNS server. Without this step, devices will keep using your ISP’s DNS instead of Pi-hole, and no filtering will occur.
+
+To use the Raspberry Pi as the primary DNS server:
 
 1. Open your router’s admin page  
 2. Find the **LAN** or **DNS Settings** section  
 3. Set the primary DNS server to your Pi-hole IP:
 ```plaintext
-192.168.1.50
+192.168.1.98
 ```
 4. Save the settings  
 5. Reboot the router **or** wait for DHCP renewals  
@@ -127,7 +129,7 @@ At this stage Pi-hole is fully installed and stable. Setting the DNS earlier may
 ### 1. Test DNS resolution on macOS
 
 ```bash
-dig google.ca
+dig google.ca -4
 ```
 
 A valid DNS response confirms that DNS resolution is working normally.
@@ -141,8 +143,8 @@ nslookup google.ca
 Expected output:
 
 ```plaintext
-Server: 192.168.1.50
-Address: 192.168.1.50#53
+Server: 192.168.1.98
+Address: 192.168.1.98#53
 ```
 
 This verifies that your Mac is now using Pi-hole as its DNS server.
@@ -185,7 +187,7 @@ By the end of this section, your Raspberry Pi Zero 2 W should have:
 - Admin password set  
 - Upstream DNS configured (Cloudflare recommended)  
 - Blocklists enabled  
-- Router configured to use Pi-hole (`192.168.1.50`) as DNS  
+- Router configured to use Pi-hole (`192.168.1.98`) as DNS  
 - Verified DNS resolution via Pi-hole  
 - Verified general Internet connectivity  
 - FTL DNS engine running correctly  
