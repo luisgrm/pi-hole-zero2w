@@ -114,7 +114,7 @@ Expected state:
 - **Active (running)** → normal operation
 - **Inactive / failed** → requires troubleshooting
 
-![Screenshot - systemctl status showing pihole-FTL active](../images/pihole_ftl_status.png)
+![Screenshot - systemctl status showing pihole-FTL active](../images/pihole_ftl_status2.png)
 
 ---
 
