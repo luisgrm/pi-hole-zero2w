@@ -3,6 +3,7 @@
 ## Overview
 
 With Pi-hole fully installed and your router configured to use it as the primary DNS server, you can now begin exploring and managing the Pi-hole web interface.  
+
 This section explains the dashboard, query logs, blocklists, tools, and the most common tasks you will perform when using Pi-hole daily.
 
 ---
@@ -91,7 +92,7 @@ Example list URL:
 https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
 ```
 
-💡 After adding or removing lists, update Pi-hole’s gravity database so changes take effect:
+⚠️ After adding or removing lists, update Pi-hole’s gravity database so changes take effect:
 
 ```bash
 pihole -g
@@ -189,8 +190,7 @@ Useful for troubleshooting.
 
 From the dashboard, click:
 
-**Disable → 5 minutes**  
-(or custom time)
+**Disable → 5 minutes** (or custom time)
 
 ---
 
