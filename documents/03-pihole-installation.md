@@ -45,7 +45,7 @@ During installation, Pi-hole will prompt for several configuration steps. The re
 Press **OK**.
 
 ### 2. Static IP Address Check  
-If your Pi already has its reserved IP (`192.168.1.50`), select **Continue**.
+If your Pi already has its reserved IP (`192.168.1.98`), select **Continue**.
 
 ### 3. Upstream DNS Provider  
 Select a privacy-focused DNS provider:  
@@ -98,6 +98,11 @@ http://192.168.1.98:80/admin
 ```
 
 ![Screenshot - Pi-hole Dashboard Homepage](../images/pihole_overview.png)
+
+At this stage, Pi-hole is fully installed but not yet filtering DNS traffic.
+Your devices are still using your router’s default DNS settings, so no queries will appear on the dashboard.  
+
+To activate Pi-hole’s filtering, you must now assign the Raspberry Pi as the primary DNS server in your router settings.
 
 ---
 
