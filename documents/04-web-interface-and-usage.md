@@ -95,7 +95,7 @@ https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
 ⚠️ After adding or removing lists, update Pi-hole’s gravity database so changes take effect:
 
 ```bash
-pihole -g
+sudo pihole -g
 ```
 
 ![Screenshot - Subscribed lists group management showing Add blocklist and Add allowlist](../images/blocklists_page.png)
@@ -188,9 +188,7 @@ Procedure:
 
 Useful for troubleshooting.
 
-From the dashboard, click:
-
-**Disable → 5 minutes** (or custom time)
+From the dashboard, click: **Disable → 5 minutes** (or custom time)
 
 ---
 
