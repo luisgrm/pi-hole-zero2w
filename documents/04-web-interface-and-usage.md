@@ -27,6 +27,8 @@ A typical home network often ranges between **5%–20%**.
 #### **4. Clients**
 How many devices contacted Pi-hole today.
 
+<img src="../images/pihole-metrics.png" alt="Pihole Key Metrics" width="500"/>
+
 ---
 
 ## Choosing an Upstream DNS Provider
