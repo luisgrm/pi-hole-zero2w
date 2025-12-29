@@ -54,7 +54,8 @@ Example hardware photo:
 ## Repository Structure
 
 ```plaintext
-.
+pi-hole-zero2w/
+│
 ├── README.md
 ├── images/
 │   ├── pihole_overview.png
